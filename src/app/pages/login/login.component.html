@@ -1,0 +1,47 @@
+<section>
+    <div class="row justify-content-md-center h-100 " style="margin-top: 4rem !important;">
+      <div class="col-md-6">
+      <div class="card-wrapper">
+        <div class="card fat">
+          <div class="card-body">
+            <h4 class="card-title">Login</h4>
+            <form [formGroup]='loginForm' (submit)='onLogin()'>
+              <div class="form-group">
+                <label for="user">Username or E-Mail</label>
+                <input 
+                type="text"
+                formControlName="user"
+                class="form-control"
+                name="user"
+                placeholder="Enter Username or E-Mail">
+                <div *ngIf="loginForm.controls.user.invalid && (loginForm.controls.user.dirty || loginForm.controls.user.touched)">
+                  <label   class="error-message" *ngIf="loginForm.controls.user.errors.required">Username Or E-mail is required</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password">Password
+                </label>
+                <input 
+                type="password"
+                class="form-control"
+                formControlName="password"
+                name="password"
+                placeholder="Enter Password">
+                <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">
+                  <label   class="error-message" *ngIf="loginForm.controls.password.errors.required">Password is required</label>
+                </div>              </div>
+              <div class="form-group no-margin">
+                <button type="submit" [disabled]='!loginForm.valid || isFormProcessing'  class="btn btn-primary btn-block">
+                  Login
+                </button>
+              </div>
+              <div class="margin-top20 text-center">
+                Don't have an account? <a routerLink="/register">Create One</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>

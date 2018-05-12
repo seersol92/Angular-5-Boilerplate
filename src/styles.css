@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+.has-error >.form-control, .has-error>.form-control:focus {
+    border-color: #ff4e00;
+}
+.form-group .error-message {
+    right: 0;
+    left: auto;
+}
+.form-group .error-message {
+  background: #ff4e00;
+  position: relative;
+  font-weight: normal;
+  font-size: .9em;
+  padding: .3em;
+  line-height: 1.2em;
+  text-align: right;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  margin: .25em 0 0 0;
+  float: right;
+  margin-bottom: 2%;
+}
+.error-message:before{
+    position: absolute;
+    top: -1.2em;
+    right: 1em;
+    content: "";
+    border-top: .7em transparent solid;
+    border-right: .7em transparent solid;
+    border-left: .7em transparent solid;
+    border-bottom: .7em #ff4e00 solid;
+}   
+.loading {    
+    background-color: #ffffff;
+    background-image: url("http://loadinggif.com/images/image-selection/3.gif");
+    background-size: 25px 25px;
+    background-position:right center;
+    background-repeat: no-repeat;
+}
+.form-group > .ng-invalid:not(.ng-untouched) {
+    border: 1px solid #ff4e00;
+}
+
+.form-group > .ng-valid {
+    border: 1px solid #00B5B8;
+}
